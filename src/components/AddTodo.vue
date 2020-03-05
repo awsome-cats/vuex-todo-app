@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Add Todo
+    <h3>Todoを追加する
     </h3>
     <div class="add">
       <form @submit="onSubmit">
@@ -32,6 +32,11 @@ export default {
 </script>
 
 <style scoped>
+h3 {
+  font-size:1.3rem;
+  font-weight:600;
+  color:#fff;
+}
 .add {
   background-color:rgb(242, 248, 246);
   width:100%;

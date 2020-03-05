@@ -44,7 +44,7 @@ export default {
     onDblClick(todo) {
       const updTodo = {
         id: todo.id,
-        title: '新しいTodoに変わりました', //todo.title
+        title: todo.title, //todo.title
         completed: !todo.completed
       }
       this.updateTodo(updTodo)
@@ -55,6 +55,11 @@ export default {
 </script>
 
 <style scoped>
+h3 {
+  font-size:1.6rem;
+  font-weight:600;
+  color:#fff;
+}
 .todos {
   display:grid;
   grid-template-columns: repeat(3,1fr);
@@ -90,17 +95,22 @@ i {
   margin-bottom:1rem;
 }
 
+.legend span:first-child {
+  color:white;
+}
+
 .complete-box {
   display: inline-block;
   width:10px;
   height:10px;
-  background:#ddd;
+  background:rgb(219, 146, 146);
 }
+
 .incomplete-box {
   display: inline-block;
   width:10px;
   height:10px;
-  background:rgb(73, 180, 73);
+  background:rgb(185, 184, 184);
 }
 
 .is-complete {

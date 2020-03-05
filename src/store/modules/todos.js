@@ -54,7 +54,8 @@ const actions = {
 
   async filterTodos({ commit },e) {
     // Get select number
-    const limit = parseInt(e.target.options[e.target.options.selectedIndex].innerText);
+    const limit = parseInt(e.target.options[e.currentTarget.options.selectedIndex].innerText);
+    console.log(limit)
     const response = await axios.get(`/todos?_limit=${limit}`)
     commit('setTodos', response.data)
   },
@@ -64,7 +65,6 @@ const actions = {
     console.log(response.data)
     commit('updateTodo', response.data)
   }
-  
 }
 
 export default {

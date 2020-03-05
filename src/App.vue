@@ -3,7 +3,7 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <div class="container">
       <AddTodo/>
-       <FilterTodo />
+      <FilterTodo />
      <Todos/> 
     </div>
   </div>

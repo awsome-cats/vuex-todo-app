@@ -1,7 +1,6 @@
 <template>
   <div class="filterTodos">
-    <h3> Fitler Todos:</h3>
-   
+    <h3>表示を絞り込みます</h3>
     <select @change="filterTodos($event)">
       <option value="200">200</option>
       <option value="100">100</option>
@@ -23,11 +22,9 @@ export default {
 </script>
 
 <style scoped>
-.filterTodos {
-  /* position: absolute;
-  top:300px;
-  left:50px; */
-  
+h3 {
+  font-size:1.3rem;
+  font-weight:600;
+  color:#fff;
 }
-
 </style>
