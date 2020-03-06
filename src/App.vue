@@ -1,11 +1,14 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
+    <router-link to="/filter">other todo page</router-link>
     <div class="container">
+      <router-view></router-view>
       <AddTodo/>
       <FilterTodo />
      <Todos/> 
     </div>
+    
   </div>
 </template>
 
