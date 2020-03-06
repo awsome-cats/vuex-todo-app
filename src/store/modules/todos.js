@@ -30,8 +30,6 @@ const mutations = {
       state.todos.splice(index, 1, updTodo)
     }
   }
-
-  
 }
 
 
@@ -39,6 +37,7 @@ const actions = {
   
   async fetchTodos({ commit }) {
     const response = await axios.get('/todos')
+    console.log(response.data)
     commit('setTodos', response.data)
     
   },
@@ -59,6 +58,9 @@ const actions = {
     const response = await axios.get(`/todos?_limit=${limit}`)
     commit('setTodos', response.data)
   },
+  // async filterTodoscheckBox関数
+
+  //配列todosからcomplete= falseを抜き取る
 
   async updateTodo({ commit }, updTodo) {
     const response = await axios.put(`/todos/${updTodo.id}`, updTodo)
