@@ -1,26 +1,22 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <router-link to="/filter">other todo page</router-link>
-    <div class="container">
-      <router-view></router-view>
-      <AddTodo/>
-      <FilterTodo />
-     <Todos/> 
-    </div>
+    
+    <router-view></router-view>
     
   </div>
 </template>
 
 <script>
-import Todos from './components/Todos.vue'
-import AddTodo from './components/AddTodo'
-import FilterTodo from './components/FilterTodo'
+
+
+
 
 export default {
+  
   name: 'App',
+  
   components: {
-    Todos, AddTodo,FilterTodo
+    
   }
 }
 </script>

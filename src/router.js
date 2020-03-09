@@ -1,19 +1,25 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Todos from '@/components/Todos'
 import OtherTodo from '@/components/OtherTodo'
+import Home from '@/components/Home'
+import User from '@/components/User'
 
 const routes = [
  
     {
-      path:'/todos',
-      name:'Todos',
-      component: Todos
+      path:'/other',
+      name:'OtherTodo',
+      component: OtherTodo
     },
     {
       path:'/',
-      name:'OtherTodo',
-      component: OtherTodo
+      name:'Home',
+      component: Home
+    },
+    {
+      path:'/user',
+      name:'User',
+      component: User
     }
   
 ]

@@ -3,53 +3,88 @@ import axios from "axios"
 
 
 const state = {
-  todos:[]
+  todos:[],
+  comments:[]
 }
 
 
 const getters = {
-  allTodos: state => state.todos
+  
+  
+  allTodos: state => state.todos,
+
+
+  
 }
 
 
 const mutations = {
+  
+  // ----------------------
+  // Todosで使用するMutation START
+  // ------------------------
+  
   setTodos (state, todos) {
     state.todos = todos
   },
+  
+  
   newTodo (state, todo) {
     state.todos.unshift(todo)
   },
+  
+  
   removeTodo(state, id) {
     state.todos = state.todos.filter(todo => {
       return todo.id !== id
     })
   },
+  
+  
   updateTodo(state, updTodo) {
     const index = state.todos.findIndex(todo => todo.id === updTodo.id)
     if (index !== -1) {
       state.todos.splice(index, 1, updTodo)
     }
-  }
+  },
+
+
+
 }
 
 
 const actions = {
   
+
+  
+
+  //------------------------------
+  // ここからOtherTodosで使うAPI end
+  //------------------------------
+  // 一時的にリミットをつけた
+  
   async fetchTodos({ commit }) {
-    const response = await axios.get('/todos')
-    console.log(response.data)
-    commit('setTodos', response.data)
-    
-  },
+      
+      const response = await axios.get('/todos')
+      
+      commit('setTodos', response.data)
+      
+    },
+
+
   async addTodo({ commit}, title){
     const response = await axios.post('/todos', {title, complete:false})
     commit('newTodo', response.data )
   },
 
+
+
   async deleteTodo({ commit }, id) {
     await axios.delete(`/todos/${id}`)
     commit('removeTodo', id)
   },
+
+
 
   async filterTodos({ commit },e) {
     // Get select number

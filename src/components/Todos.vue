@@ -11,6 +11,7 @@
       </span>
     </div>
     <div class="todos">
+      
       <div 
         @dblclick="onDblClick(todo)" 
         
@@ -22,7 +23,9 @@
       >
        {{todo.title}}
        <i @click="deleteTodo(todo.id)" class="fas fa-trash-alt"></i>
+      
       </div>
+    
     </div>
   </div>
 </template>
@@ -33,20 +36,31 @@ import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'Todos',
+  
+  
   computed :{
     ...mapGetters(['allTodos'])
   },
+   
+   
    created(){
       this.fetchTodos()
     },
+  
+  
   methods: {
+    
     ...mapActions(['fetchTodos', 'deleteTodo', 'updateTodo']),
+
     onDblClick(todo) {
+      
       const updTodo = {
         id: todo.id,
         title: todo.title, //todo.title
         completed: !todo.completed
       }
+      
+      
       this.updateTodo(updTodo)
     }
   }
@@ -55,11 +69,15 @@ export default {
 </script>
 
 <style scoped>
+
+
 h3 {
   font-size:1.6rem;
   font-weight:600;
   color:#fff;
 }
+
+
 .todos {
   display:grid;
   grid-template-columns: repeat(3,1fr);
